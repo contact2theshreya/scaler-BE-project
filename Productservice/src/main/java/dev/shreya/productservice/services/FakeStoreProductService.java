@@ -1,6 +1,7 @@
 package dev.shreya.productservice.services;
 
 import dev.shreya.productservice.dtos.FakeStoreProductDto;
+import dev.shreya.productservice.exceptions.ProductNotFoundException;
 import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
 import org.springframework.http.*;
@@ -20,11 +21,17 @@ public class FakeStoreProductService implements  ProductService{
         this.restTemplate = restTemplate;
     }
     @Override
-    public Product getSingleProduct(Long productId) {
+    public Product getSingleProduct(Long productId) throws ProductNotFoundException {
         ResponseEntity<FakeStoreProductDto> fakeStoreProductResponse = restTemplate.getForEntity(
                 "https://fakestoreapi.com/products/" + productId,
                 FakeStoreProductDto.class
         );
+        FakeStoreProductDto fakeStoreProduct = fakeStoreProductResponse.getBody();
+
+        if (fakeStoreProduct == null) {
+            //here we will get this msg but with not custom statuscode and and also we will get complete stacktrace
+            throw new ProductNotFoundException("Product with id: " + productId + " doesn't exist. Retry some other product.");
+        }
         return fakeStoreProductResponse.getBody().toProduct();
     }
 
@@ -35,6 +42,9 @@ public class FakeStoreProductService implements  ProductService{
                         "https://fakestoreapi.com/products",
                         FakeStoreProductDto[].class
                 );
+        if(fakeStoreProducts.getStatusCode() != HttpStatusCode.valueOf(200)){
+            //throw exception
+        }
 
         List<Product> products = new ArrayList<>();
 

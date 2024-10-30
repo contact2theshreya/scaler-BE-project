@@ -1,5 +1,6 @@
 package dev.shreya.productservice.services;
 
+import dev.shreya.productservice.exceptions.ProductNotFoundException;
 import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
 import org.springframework.stereotype.Service;
@@ -8,7 +9,7 @@ import java.util.List;
 
 
 public interface ProductService {
-    Product getSingleProduct(Long productId);
+    Product getSingleProduct(Long productId) throws ProductNotFoundException;
     List<Product> getProducts();
     List<Category> getAllProductsCategories();
     List<Product> getProductInSpecificCategory(String category);

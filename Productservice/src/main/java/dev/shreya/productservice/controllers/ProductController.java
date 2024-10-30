@@ -1,6 +1,8 @@
 package dev.shreya.productservice.controllers;
 
 import dev.shreya.productservice.dtos.CreateProductRequestDto;
+import dev.shreya.productservice.dtos.ErrorDto;
+import dev.shreya.productservice.exceptions.ProductNotFoundException;
 import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
 import dev.shreya.productservice.services.ProductService;
@@ -42,7 +44,7 @@ public class ProductController {
 
     //Type this in URL - http://localhost:8080/products/1
     @GetMapping("/products/{id}")
-    public Product getProductDetails(@PathVariable("id") Long productId) {
+    public Product getProductDetails(@PathVariable("id") Long productId) throws ProductNotFoundException {
         return productService.getSingleProduct(productId);
     }
 
@@ -80,4 +82,21 @@ public class ProductController {
     public Product  deleteProductById(@PathVariable("id") Long productId){
         return productService.deleteProduct(productId);
     }
+//        @ExceptionHandler(ProductNotFoundException.class)
+//    public ResponseEntity<ErrorDto> handleProductNotFoundExeption(ProductNotFoundException exception) {
+//
+//        ErrorDto errorDto = new ErrorDto();
+//        errorDto.setMessage(exception.getMessage());
+//
+//        return new ResponseEntity<>(errorDto, HttpStatus.NOT_FOUND);
+////        return null;
+//    }
+
+    // Limited to only the exceptions thrown from this controller
+    // Controller Advices: Global
+
+    // if this controller ever ends up throwing ProductNotFoundException.class
+    // for any reason, don't throw that exception as is.
+    // Instead call this method and return what this method is returning
 }
+

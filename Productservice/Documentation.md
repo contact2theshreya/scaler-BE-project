@@ -19,6 +19,16 @@ https://fakestoreapi.com/docs
 Post request - postman signin with google
 ![img.png](img.png)
 
+# Exceptions
+ Without controlelr advice
+ http://localhost:8080/products/1000000
+![img_1.png](img_1.png)
+With controller advice
+![img_2.png](img_2.png)
+
 Github link for fakestore all api-
 https://github.com/abhishek621/fakestore-api/tree/master
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
 
