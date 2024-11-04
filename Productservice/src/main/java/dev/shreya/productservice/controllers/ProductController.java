@@ -6,6 +6,7 @@ import dev.shreya.productservice.exceptions.ProductNotFoundException;
 import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
 import dev.shreya.productservice.services.ProductService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ import java.util.List;
 public class ProductController {
     private ProductService productService;
     private RestTemplate restTemplate;
-    public ProductController(ProductService productService){
+    public ProductController(@Qualifier("selfProductService")  ProductService productService){
         this.productService=productService;
     }
     @PostMapping("/products")
