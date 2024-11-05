@@ -21,6 +21,6 @@ public class Product extends BaseModel{
 //    @ManyToOne(cascade = {CascadeType.PERSIST})
 //    private Category category;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @ManyToOne(cascade = {CascadeType.ALL})//to update child along with parent
     private Category category;
 }

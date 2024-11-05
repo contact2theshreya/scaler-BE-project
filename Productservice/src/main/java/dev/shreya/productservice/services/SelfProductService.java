@@ -62,7 +62,39 @@ public class SelfProductService  implements ProductService{
 
     @Override
     public Product updateProduct(Long productId, String title, String description, String category, double price, String image) {
-        return null;
+       Product productFromDatabase = productRepository.findByIdIs(productId);
+     //  PATCH
+//        if(title != null) productFromDatabase.setTitle(title);
+//        if(description != null) productFromDatabase.setDescription(description);
+//        if(price != 0.0) productFromDatabase.setPrice(price);
+//        if(image != null) productFromDatabase.setImageUrl(image);
+//        Category category1 = categoryRepository.findByTitle(category);
+//        category1.setTitle(category);
+//        if(category != null) productFromDatabase.setCategory(category1);
+//        return productRepository.save(productFromDatabase);
+
+        ///////////PUT///////////////////
+
+        Product p = new Product();
+        p.setId(productId);
+        if(title != null) p.setTitle(title);
+        if(description != null) p.setDescription(description);
+        if(price != 0.0) p.setPrice(price);
+        if(image != null) p.setImageUrl(image);
+
+
+        Category c = categoryRepository.findByTitle(category);
+        if(c  == null){
+            Category newCategory = new Category();
+            newCategory.setTitle(category);
+            c = newCategory;
+        }
+        // if the category was found from DB -> category1 will be having an ID
+        // else: category1 won't have any ID
+
+         p.setCategory(c);
+        Product savedProduct = productRepository.save(p);
+        return savedProduct;
     }
 
     @Override

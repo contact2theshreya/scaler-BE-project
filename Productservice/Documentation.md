@@ -46,7 +46,7 @@ https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-deta
 https://docs.spring.io/spring-data/jpa/reference/repositories/query-keywords-reference.html
 https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
 
-
+Postman collection 
 Click on database icon on intellij and add datasource ->without providing DB
 NOw run this in console
 
