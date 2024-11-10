@@ -45,6 +45,12 @@ https://www.baeldung.com/jpa-cascade-types
 https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-details.html
 https://docs.spring.io/spring-data/jpa/reference/repositories/query-keywords-reference.html
 https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+https://www.baeldung.com/hibernate-inheritance
+# FetchType
+https://medium.com/destinationaarhus-techblog/how-to-implement-an-sql-join-with-jpa-6c5ff23bb7a6
+https://stackoverflow.com/questions/26601032/default-fetch-type-for-one-to-one-many-to-one-and-one-to-many-in-hibernate
+https://stackoverflow.com/questions/2990799/difference-between-fetchtype-lazy-and-eager-in-java-persistence-api
+https://www.baeldung.com/hibernate-lazy-eager-loading
 
 Postman collection 
 Click on database icon on intellij and add datasource ->without providing DB

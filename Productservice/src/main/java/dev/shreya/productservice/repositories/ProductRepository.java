@@ -2,8 +2,10 @@ package dev.shreya.productservice.repositories;
 
 import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
+import dev.shreya.productservice.repositories.projections.ProductWithIdAndTitle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -18,8 +20,18 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 //    @Query(value="SELECT * FROM Product  WHERE category.title =?1 "
 //            , nativeQuery = true)
     List<Product> findAllByCategoryTitle(String title);
+    List<Product> findAllByCategory_Title(String title);
     void deleteById(Long productId);
+    //HQL/////////
+    @Query("select p from Product p where p.category.title=:title and p.id=:id")
+    Product getNameOfProduct(@Param("title") String title, @Param("id") Long id);
 
+    @Query("select p.title as title,p.id as id from Product p where p.title=:title and p.id=:id")
+    List<ProductWithIdAndTitle> getNameOfProductWithProjection(@Param("title") String title, @Param("id") Long id);
+
+    //Native sql query
+    @Query(value = "select * from Product p where p.title=:title and p.id=:id",nativeQuery = true)
+    List<ProductWithIdAndTitle> getNameOfProductWithProjectionNative(@Param("title") String title, @Param("id") Long id);
 
 
 }
