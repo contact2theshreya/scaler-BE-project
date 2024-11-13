@@ -23,4 +23,6 @@ public class Product extends BaseModel{
 
     @ManyToOne(cascade = {CascadeType.ALL})//to update child along with parent
     private Category category;
+
+    private int quantity;
 }

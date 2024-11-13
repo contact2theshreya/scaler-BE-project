@@ -64,3 +64,27 @@ grant all privileges on productservice to productserviceuser;
 
 ![img_3.png](img_3.png)
 ![img_4.png](img_4.png)
+
+Lazy fetch type
+
+As not able to fetch product
+![img_7.png](img_7.png)
+If u make fetch type eager in category model for list of product
+![img_8.png](img_8.png)
+Now left join happens with product table when u fetch category
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
+https://www.baeldung.com/database-migrations-with-flyway
+https://www.baeldung.com/spring-data-jpa-query
+https://www.baeldung.com/hibernate-fetchmode
+## FLYWAY
+Add dependency of flyway
+delete table
+change ddl-auto to validate
+In base model make generation type identity in ID
+Do flyway init migration from persistence tab  and now db.migration filder -> version1 init sql file is created
+Restart application ->now all tables will be cretaed
+![img_11.png](img_11.png)
+Which contains query to craete table
+Now add attribute quantity in product table->do flyway versioned   migration now new version of changes and give name of file then new version file is created
+Restart application ->now all tables will be cretaed

@@ -20,7 +20,7 @@ public class Category extends BaseModel {
 //    @JsonIgnore
 //    private List<Product> products;
 
-    @OneToMany(mappedBy = "category", cascade = {CascadeType.REMOVE})
+    @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE)
     @JsonIgnore//to remove this form response
     private List<Product> products;
 
