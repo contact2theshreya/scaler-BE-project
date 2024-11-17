@@ -38,8 +38,10 @@ To add a tag to the public key, choose Add tag, and enter the key and value for 
 Choose Create key pair.
 ![image](https://github.com/user-attachments/assets/765cea2e-6ff3-41a5-a0a2-94afcb58c25b)
 Note-keep pem file safely for authentication if u forgot password to sign in in EBS then pem file can be used to authenticate,u can also use pem file to login via console
+create role r1->AWS service>choose EC2->add permision(adminacess,worker and web tier and multi docker domain)
+create user (your gmail id)->add user to user group
+8) ![image](https://github.com/user-attachments/assets/83913b7a-5079-43b6-b7fe-e84e46747179)
 
-8)  ![image](https://github.com/user-attachments/assets/65c700e8-ff0b-443e-96cb-87d9b102cf39)
 9)  Public acess activated in next screen
 10)  ![image](https://github.com/user-attachments/assets/b9957505-e8d8-411a-951e-c9c2d1e4bc0b)
 
