@@ -80,5 +80,12 @@ U can also add  DB of RDS in EBS
 
 EBS runs a reverse proxy server on port 80 which forward traffic to application on port 5000 so either modify reverse proxy to forward to  port 8080 or  set server port env variable /in app.prop to port 5000
 
+To use environment variables in spring boot application.properties you can use the usual Spring placeholder notation:
+
+spring.datasource.url = ${JDBC_CONNECTION:default_value_connection}
+Further explanation: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-external-config-placeholders-in-properties
+
+You can set JDBC_CONNECTION value in AWS Elastic beanstalk. If JDBC_CONNECTION environment variable not set it will use the 'default_value_connection'.
+
 
 
