@@ -13,8 +13,26 @@ EBS is built on top of EC2 plus it also give storage , there is no need to insta
    Once u add an user they will get an email for the invitation
    ![image](https://github.com/user-attachments/assets/84a88081-541c-4871-bda0-b38a68262e26)
    ![image](https://github.com/user-attachments/assets/f45b1993-b584-49ed-aeef-18b4bd203a0e)
+   Note-Ec2 key pair is optional.
 Now create group and create role according to this video and new role and group while creating env as per below video
-https://youtu.be/pbUFV27Py8E
+## Follow this in case of error-
+https://repost.aws/questions/QUcX9TipxqSGeM5G7RORmqoQ/new-account-recently-created-unable-to-create-environments-on-elastic-beanstalk-launch-configuration-error
+Change root nvolume while creatng environment and disable DisableIMDSv1
+![image](https://github.com/user-attachments/assets/82d71fb6-052b-4340-aea5-db5fe3e86822)
+configuring IMDS using the Elastic Beanstalk console
+You can modify your Elastic Beanstalk environment's Amazon EC2 instance configuration in the Elastic Beanstalk console.
+Important
+The DisableIMDSv1 option setting can cause Elastic Beanstalk to create an environment with a launch template or update an existing environment from launch configurations to launch templates. For more information, see Launch Templates.
+To configure IMDS on your Amazon EC2 instances in the Elastic Beanstalk console
+1.	Open the Elastic Beanstalk console, and in the Regions list, select your AWS Region.
+2.	In the navigation pane, choose Environments, and then choose the name of your environment from the list.
+Note
+If you have many environments, use the search bar to filter the environment list.
+3.	In the navigation pane, choose Configuration.
+4.	In the Instance traffic and scaling configuration category, choose Edit.
+5.	Set Disable IMDSv1 to enforce IMDSv2. Clear Disable IMDSv1 to enable both IMDSv1 and IMDSv2.
+6.	To save the changes choose Apply at the bottom of the page.
+
 
 ## To create a key pair using Amazon EC2(if not already created)
 Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
