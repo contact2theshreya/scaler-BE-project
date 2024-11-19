@@ -17,12 +17,16 @@ EBS is built on top of EC2 plus it also give storage , there is no need to insta
 Now create group and create role according to this video and new role and group while creating env as per below video
 ## Follow this in case of error-
 https://repost.aws/questions/QUcX9TipxqSGeM5G7RORmqoQ/new-account-recently-created-unable-to-create-environments-on-elastic-beanstalk-launch-configuration-error
-Change root nvolume while creatng environment and disable DisableIMDSv1
+
+Change root nvolume while creatng environment <b>IN INSTANCE AND traffik settng</b> and disable DisableIMDSv1
+![image](https://github.com/user-attachments/assets/b470e798-3351-4717-ab9c-f142b60f1eff)
+
 ![image](https://github.com/user-attachments/assets/82d71fb6-052b-4340-aea5-db5fe3e86822)
 configuring IMDS using the Elastic Beanstalk console
 You can modify your Elastic Beanstalk environment's Amazon EC2 instance configuration in the Elastic Beanstalk console.
 Important
 The DisableIMDSv1 option setting can cause Elastic Beanstalk to create an environment with a launch template or update an existing environment from launch configurations to launch templates. For more information, see Launch Templates.
+
 To configure IMDS on your Amazon EC2 instances in the Elastic Beanstalk console
 1.	Open the Elastic Beanstalk console, and in the Regions list, select your AWS Region.
 2.	In the navigation pane, choose Environments, and then choose the name of your environment from the list.
@@ -65,6 +69,11 @@ create user (your gmail id)->add user to user group
 
 11)  ![image](https://github.com/user-attachments/assets/5dc674b6-1617-4421-bef0-6f9a59311a20)
     Next and submit
+![image](https://github.com/user-attachments/assets/30f49f86-6351-4cf3-9ba2-57fda8d289b6)
+
+![image](https://github.com/user-attachments/assets/47bcb036-b949-44f8-bf7e-bfd395ccac8e)
+
+
 U can also add  DB of RDS in EBS
 
 ## 
