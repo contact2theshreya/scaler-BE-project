@@ -76,7 +76,9 @@ create user (your gmail id)->add user to user group
 
 U can also add  DB of RDS in EBS
 
-## 
+## Note
+
+EBS runs a reverse proxy server on port 80 which forward traffic to application on port 5000 so either modify reverse proxy to forward to  port 8080 or  set server port env variable /in app.prop to port 5000
 
 
 
