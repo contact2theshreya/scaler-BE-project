@@ -1,0 +1,10 @@
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\config\ApplicationConfiguration.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\controllers\ProductController.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\dtos\CreateProductRequestDto.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\dtos\FakeStoreProductDto.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\models\BaseModel.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\models\Category.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\models\Product.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\ProductserviceApplication.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\services\FakeStoreProductService.java
+D:\scaler\scaler-BE\scaler-BE-project\Productservice\src\main\java\dev\shreya\productservice\services\ProductService.java

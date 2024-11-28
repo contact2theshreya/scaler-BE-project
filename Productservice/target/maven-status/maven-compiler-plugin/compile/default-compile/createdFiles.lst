@@ -1,0 +1,10 @@
+dev\shreya\productservice\config\ApplicationConfiguration.class
+dev\shreya\productservice\dtos\FakeStoreProductDto.class
+dev\shreya\productservice\ProductserviceApplication.class
+dev\shreya\productservice\models\Product.class
+dev\shreya\productservice\models\BaseModel.class
+dev\shreya\productservice\dtos\CreateProductRequestDto.class
+dev\shreya\productservice\models\Category.class
+dev\shreya\productservice\services\FakeStoreProductService.class
+dev\shreya\productservice\services\ProductService.class
+dev\shreya\productservice\controllers\ProductController.class
