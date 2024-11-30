@@ -3,6 +3,7 @@ package dev.shreya.productservice.services;
 import dev.shreya.productservice.exceptions.ProductNotFoundException;
 import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,4 +25,5 @@ public interface ProductService {
                           double price,
                           String image);
     Product deleteProduct(Long productId);
+     Page<Product> getAllPageProducts(int pageno,int pagesize,String sort);
 }

@@ -7,6 +7,7 @@ import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
 import dev.shreya.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -99,5 +100,21 @@ public class ProductController {
     // if this controller ever ends up throwing ProductNotFoundException.class
     // for any reason, don't throw that exception as is.
     // Instead call this method and return what this method is returning
+
+    @GetMapping("/products/{pageSize}/{pageNumber}")
+    public ResponseEntity  getAllPageProducts(@PathVariable("pageSize") int pageSize,
+                                              @PathVariable("pageNumber") int pageNumber         )  {
+
+        //sorted by id by default
+    Page<Product> productPage = productService.getAllPageProducts(pageNumber,pageSize,null);
+    return  ResponseEntity.ok(productPage.getContent());
+    }
+    @GetMapping("/productsByPrice/{pageSize}/{pageNumber}")
+    public ResponseEntity  getAllPageProductsByPrice(@PathVariable("pageSize") int pageSize,
+                                              @PathVariable("pageNumber") int pageNumber         )  {
+
+        Page<Product> productPage = productService.getAllPageProducts(pageNumber,pageSize,"price");
+        return  ResponseEntity.ok(productPage.getContent());
+    }
 }
 

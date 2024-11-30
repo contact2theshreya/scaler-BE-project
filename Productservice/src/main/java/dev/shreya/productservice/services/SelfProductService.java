@@ -5,6 +5,10 @@ import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
 import dev.shreya.productservice.repositories.CategoryRepository;
 import dev.shreya.productservice.repositories.ProductRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -103,5 +107,16 @@ public class SelfProductService  implements ProductService{
         Product p = new Product();
         p.setId(productId);
         return p;
+    }
+
+    @Override
+    public Page<Product> getAllPageProducts(int pageno,int pagesize,String sort) {
+        Pageable pageable = null;
+        if(sort != null){
+            pageable = PageRequest.of(pageno,pagesize, Sort.Direction.ASC,sort);
+        }else{
+            pageable = PageRequest.of(pageno,pagesize);
+        }
+        return  productRepository.findAll(pageable);
     }
 }

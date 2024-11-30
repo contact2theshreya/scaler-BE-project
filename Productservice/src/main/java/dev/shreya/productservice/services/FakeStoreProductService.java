@@ -4,6 +4,7 @@ import dev.shreya.productservice.dtos.FakeStoreProductDto;
 import dev.shreya.productservice.exceptions.ProductNotFoundException;
 import dev.shreya.productservice.models.Category;
 import dev.shreya.productservice.models.Product;
+import org.springframework.data.domain.Page;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -156,5 +157,10 @@ public class FakeStoreProductService implements  ProductService{
         ).getBody().toProduct();
 
 
+    }
+
+    @Override
+    public Page<Product> getAllPageProducts(int pageno,int pagesize,String sort) {
+        return null;
     }
 }
