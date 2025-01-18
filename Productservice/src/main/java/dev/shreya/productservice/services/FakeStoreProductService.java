@@ -7,6 +7,7 @@ import dev.shreya.productservice.models.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class FakeStoreProductService implements  ProductService{
 
     @Override
     public List<Product> getProducts() {
+
         ResponseEntity<FakeStoreProductDto[]> fakeStoreProducts =
                 restTemplate.getForEntity(
                         "https://fakestoreapi.com/products",
