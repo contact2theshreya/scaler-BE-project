@@ -87,5 +87,26 @@ Further explanation: https://docs.spring.io/spring-boot/docs/current/reference/h
 
 You can set JDBC_CONNECTION value in AWS Elastic beanstalk. If JDBC_CONNECTION environment variable not set it will use the 'default_value_connection'.
 
+## VPC(virtual private cloud) and security group
+1) vpc is introduced to secure machine resources coz many machine in cloud is connectednvia some pipeline
+2) vpc is cloud within cloud-virtually machine is part of group/sepatre cloud
+3) security constraint-only app server can talk to DB and cache,sometime db can talk to cache not external user so make app server ,db,cache part of same VPC then in DB configureation do enable that only allow acess to this DB from any machine that are part of same VPC
+4) every microservice has its own VPC
+5) secruity group is set of security configuration taht allow to configure inbound and outbound type rule ,wher from and wher to a machine get or set data
+6) inbound rules-from where this machine can get traffic from
+7) example if u delete all outbound rule of security grou of any service then u can't see response from api,service can't send any request
+8) if u set this ,u will get response back
+9) ![image](https://github.com/user-attachments/assets/378a8a4b-92b7-43d9-87a5-d4f82351cc75)
+10) if u set ip of google in outbound rule,then u can only send request to google
+ ![image](https://github.com/user-attachments/assets/ee9782f9-fef4-41ab-8a20-ac198a2f7759)
+11) Inb rds also security group is set ,if inbound rule is to allow traffic from anywher then from local also u can connect to RDS
+12) every vpc has CIDR,if u add in inbound rule that CIDR then only machine in same vpc can send request
+13) ![image](https://github.com/user-attachments/assets/5298c03f-c91f-4dca-b7be-a0b3f6c97939)
+14) if only app server can talk to dba nd u can connect to app server via SSH(pem file) then in order to u talk to DB u connect to jump server via SSH which is in same vpc and has didferent pem file and that jump server will talk to DB,so gine info of jump server in intellij in SSH and SSL conkfiguration tab and then u can connect to RDS via intellij
+15) 
+16) 
 
+
+
+17) 
 
